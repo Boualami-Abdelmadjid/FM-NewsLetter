@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --primary: hsl(4, 100%, 67%);
+  --dark-slate-gray: hsl(234, 29%, 20%);
+  --charcoal-gray: hsl(235, 18%, 26%);
+  --gray: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--charcoal-gray);
+  display: grid;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  place-self: center;
+  display: flex;
+  padding: 12px;
+  border-radius: 16px;
+  background-color: var(--white);
+}
+
+.container div:first-child {
+  padding-inline: 2.5rem;
+  color: var(--dark-slate-gray);
+  max-width: 23rem;
+  font-weight: 400;
+  padding-block: 2rem;
+}
+.container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.container ul {
+  list-style-type: none;
+  padding-inline: 0;
+  margin-top: 1.5rem;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.container ul li p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.input_container {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.input_container div.flex {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.input_container div.flex label:last-child {
+  display: none;
+  color: #ff5500;
+  font-size: 12px;
+}
+.input_container:has(input:invalid) div.flex label:last-child {
+  display: block;
+}
+
+.input_container label {
+  font-weight: 500;
+  font-size: 12px;
+}
+.input_container input {
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+}
+.input_container input:focus {
+  border: 1px solid var(--charcoal-gray);
+  outline-width: 0;
+}
+.input_container input:invalid {
+  background-color: #ff9a442e;
+  border-color: #f15200ba;
+  color: #ff5500;
+}
+
+.input_container button {
+  text-align: center;
+  padding-block: 0.9rem;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-width: 0px;
+  background-color: var(--dark-slate-gray);
+  transition: background-color 1s;
+  color: var(--white);
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.input_container button:hover {
+  background-image: linear-gradient(to left, orange, var(--primary));
+}
+
+.success {
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  place-self: center;
+  width: 24rem;
+  background: var(--white);
+  padding: 2rem 3rem;
+  color: var(--dark-slate-gray);
+}
+.success h1 {
+  font-size: 2.5rem;
+  line-height: 2.3rem;
+  margin-block: 2rem;
+}
+
+.success p {
+  color: var(--dark-slate-gray);
+}
+.success button {
+  display: block;
+  text-align: center;
+  padding-block: 0.8rem;
+  background-color: var(--dark-slate-gray);
+  color: var(--white);
+  width: 100%;
+  border-radius: 8px;
+  outline: 0;
+  border-width: 0;
+  margin-block: 2rem 1rem;
+  cursor: pointer;
+}
+.success button:hover {
+  background-image: linear-gradient(to left, orange, var(--primary));
+}
+.hidden {
+  display: none !important;
+}
+.image {
+  background-image: url("./assets/images/illustration-sign-up-desktop.svg");
+  height: 30rem;
+  width: 20rem;
+  background-size: cover;
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    box-sizing: border-box;
+    flex-direction: column-reverse;
+    justify-content: start;
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    place-self: start;
+    margin-block: 0;
+  }
+  .container > div:first-child {
+    padding-inline: 1rem;
+  }
+  .container button {
+    margin-top: auto;
+  }
+  .image {
+    background-image: url("./assets/images/illustration-sign-up-mobile.svg");
+    height: 16rem;
+    width: 100%;
+    background-size: cover;
+    margin-block: 0;
+  }
+  .success {
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 0;
+    background: var(--white);
+    padding: 10rem 4rem 2rem;
+    place-self: start;
+    height: 100%;
+    width: 100%;
+  }
+  .success button {
+    margin-top: auto;
+  }
+}
